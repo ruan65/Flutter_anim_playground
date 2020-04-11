@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ui/animated_padding_screen.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -102,7 +104,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => AnimatedPaddingScreen()));
+        },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
