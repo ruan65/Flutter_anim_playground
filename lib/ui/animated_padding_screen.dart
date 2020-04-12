@@ -17,17 +17,14 @@ class _AnimatedPaddingScreenState extends State<AnimatedPaddingScreen>
       duration: Duration(seconds: 1),
     );
     animationController.addListener(() {
-      // print(animationController.value);
       setState(() {});
     });
-    // animationController.addStatusListener((AnimationStatus status) {
-    //   if (status == AnimationStatus.completed) {
-    //     animationController.reverse();
-    //   } else if (status == AnimationStatus.dismissed) {
-    //     animationController.forward();
-    //   }
-    // },
-    // );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController?.dispose();
   }
 
   @override
